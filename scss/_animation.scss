@@ -1,0 +1,197 @@
+// ======== kv左右動畫 ======== 
+.kv__left{
+    background-position: 0 50px;
+    animation-duration: 5s;
+    animation-timing-function:cubic-bezier(0.33, 1, 0.68, 1);
+    animation-fill-mode:forwards;
+}
+@keyframes kv_left{
+    0%{
+      background-position: 0 50px;
+    }
+    100%{
+        background-position: 0 0px;
+    }
+}
+.kv_left--ready{
+    animation-name: kv_left;
+}
+
+.kv__right{
+    background-position: 0 -50px;
+    animation-duration: 5s;
+    animation-timing-function:cubic-bezier(0.33, 1, 0.68, 1);
+    animation-fill-mode:forwards;
+}
+.kv_right--ready{
+    animation-name: kv_right;
+}
+@keyframes kv_right{
+    0%{
+      background-position: 0 -50px;
+    }
+    100%{
+        background-position: 0 0px;
+    }
+}
+// ======== title1 ======== 
+.kv__title>img:nth-child(1){
+    animation-name: kv_title1;
+    animation-duration: 5s;
+    animation-timing-function:cubic-bezier(0.22, 1, 0.36, 1);
+}
+.kv__title>img:nth-child(3){
+    opacity: 0;
+    animation-name: kv_title1;
+    animation-duration: 5s;
+    animation-delay: 1s;
+    animation-timing-function:cubic-bezier(0.22, 1, 0.36, 1);
+    animation-fill-mode: forwards;
+    }
+@keyframes kv_title1 {
+    form { opacity: 0; transform: translate3d(0px, 100px, 0); }
+    0% { transform: translate3d(0px, 100px, 0); }
+    70% { transform: translate3d(0, 0, 0); }
+    100% { transform: translate3d(0, 0, 0); }
+    to {  opacity: 1; transform: translate3d(0, 0, 0) }
+    }
+// ======== title2 ======== 
+.ani_title1{
+    opacity: 0;
+    transform: translateX(-120px);
+    animation-name: kv_title2;
+    animation-duration: 1s;
+    animation-timing-function:cubic-bezier(0.36, 0, 0.66, -0.56);
+    animation-fill-mode: forwards;
+}
+@keyframes kv_title2 {
+    form { opacity: 0; transform: translateX(-150px); }
+    0% { opacity: 0; transform: translateX(-150px); }
+    100% { transform: translate3d(0, 0, 0); }
+    to {  opacity: 1; transform: translateX(0px);}
+    }
+.ani_title2{
+    opacity: 0;
+    transform: translateX(-150px);
+    animation-name: kv_title3;
+    animation-duration: 1s;
+    animation-timing-function:cubic-bezier(0.36, 0, 0.66, -0.56);
+    animation-fill-mode: forwards;
+}
+@keyframes kv_title3 {
+    form { opacity: 0; transform: translateX(150px); }
+    0% { opacity: 0; transform: translateX(150px); }
+    100% { transform: translate3d(0, 0, 0); }
+    to {  opacity: 1; transform: translateX(0px);}
+    }
+.ani_title3{
+    opacity: 0;
+    transform: translateX(150px) skew(-30deg, -20deg);
+    animation-name: kv_title4;
+    animation-duration: 1.5s;
+    animation-delay: 1s;
+    animation-timing-function:cubic-bezier(0.36, 0, 0.66, -0.56);
+    animation-fill-mode: forwards;
+}
+@keyframes kv_title4 {
+    form { opacity: 0; transform: translateX(150px) skew(-30deg, -20deg); }
+    0% {  opacity: 0; transform: translateX(150px) skew(-30deg, -20deg); }
+    80% {  opacity: 1; transform: translateX(10px) skew(0deg, 0deg); }
+    95% {  opacity: 1; transform: translateX(-10px) skew(5deg, 5deg); }
+    100% { opacity: 1;transform: translate3d(0, 0, 0); }
+    to {  opacity: 1; transform: translate3d(0, 0, 0);}
+}
+// ======== 人物 ======== 
+.kv__people img{
+    opacity: 0;
+    transition: all 1s;
+}
+
+.kv__people[data-ani="delay"] .kv__left--woman1{
+        animation-name: woman1;
+        animation-duration: 10s;
+        animation-iteration-count:infinite;
+        animation-timing-function:ease;
+        animation-duration: normal;
+        animation-delay: 0s;
+    }
+    @keyframes woman1 {
+        0% { opacity: 0; transform: translateX(200%); }
+        25% { opacity: 0; transform: translateX(200%); }
+        35% { opacity: 1; transform: translateX(0%); }
+        65% { opacity: 1; transform: translateX(0%); }
+        75% { opacity: 0; transform: translateX(200%); }
+        100% { opacity: 0; transform: translateX(200%); }
+    }
+    
+    .kv__people[data-ani="delay"] .kv__left--woman2{
+        animation-name: woman1;
+        animation-duration: 10s;
+        animation-iteration-count:infinite;
+        animation-timing-function:ease;
+        animation-duration: normal;
+        animation-delay: 5s;
+    }
+
+
+
+
+
+.kv__people[data-ani="delay"] .kv__right--man1{
+    animation-name: man1;
+    animation-duration: 10s;
+    animation-iteration-count:infinite;
+    animation-timing-function:ease;
+    animation-duration: normal;
+    animation-delay: 0s;
+}
+@keyframes man1 {
+    0% { opacity: 0; transform: translateX(-200%); }
+    25% { opacity: 0; transform: translateX(-200%); }
+    35% { opacity: 1; transform: translateX(0%); }
+    65% { opacity: 1; transform: translateX(0%); }
+    75% { opacity: 0; transform: translateX(-200%); }
+    100% { opacity: 0; transform: translateX(-200%); }
+}
+
+.kv__people[data-ani="delay"] .kv__right--man2{
+    animation-name: man1;
+    animation-duration: 10s;
+    animation-iteration-count:infinite;
+    animation-timing-function:ease;
+    animation-duration: normal;
+    animation-delay: 5s;
+}
+
+// ======== 下方按鈕 ======== 
+.popbtn__1{
+    &:after{
+        animation-name: popbtn1;
+        animation-duration: 3s;
+        animation-iteration-count:infinite;
+        animation-timing-function:ease;
+        transform: translateX(-100%);
+        animation-direction: normal;
+    }
+}
+@keyframes popbtn1 {
+    0% { transform: translateX(-100%); }
+    50% { transform: translateX(100%); }
+    100% { transform: translateX(100%); }
+}
+.popbtn__2{
+    &:after{
+        animation-name: popbtn2;
+        animation-duration: 3s;
+        animation-iteration-count:infinite;
+        animation-timing-function:ease;
+        transform: translateX(-100%);
+        animation-direction: normal;
+    }
+}
+@keyframes popbtn2 {
+    0% { transform: translateX(-100%); }
+    30% { transform: translateX(-100%); }
+    80% { transform: translateX(100%); }
+    100% { transform: translateX(100%); }
+}

@@ -1,0 +1,484 @@
+@mixin rwd(){
+    @media(min-width:$w){
+        @content
+    }
+}
+@mixin df_center(){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin bg_reset($p:left top){
+    background-repeat: no-repeat;
+    background-position: $p;
+}
+
+
+
+*{
+    box-sizing: border-box;
+}
+body,html{
+    background-color: $lightBlue;
+    width: 100%;
+}
+img,iframe{
+    max-width: 100%;
+    height: auto;
+}
+input:focus{
+    outline: none;
+}
+// ======== 基本設置結束 ======== 
+.wrapper{
+    width: $w;
+    margin: 0 auto;
+    position: relative;
+}
+.popbtn{
+    width: $w;
+    height: $w/2*0.79/2;
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    bottom: 0px;
+    left: 0;
+    z-index: 9;
+    & [class^="popbtn"]{
+        width: 50%;
+        height: 100%;
+        background-size: cover;
+        overflow: hidden;
+        position: relative;
+        @include bg_reset
+        &:hover{
+            background-position: bottom ;
+        }
+        &:after{
+            content: '';
+            display: block;
+            width: 256px;
+            height: 126px;
+            background-image: url(/img/btn_light.png);
+        }
+    }
+    &__1{
+        background-image: url(/img/kv_btn_1.jpg);
+    }
+    &__2{
+        background-image: url(/img/kv_btn_2.jpg);
+    }
+    @include rwd(){
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}   
+.nav{
+    position: fixed;
+    z-index: 9;
+    top: 0;
+    height: 60px;
+    width: $w;
+    background-color: $white;
+    img{
+        position: absolute;
+        width: 120px;
+        height: auto;
+        left: 20px;
+        top: 10px;
+    }
+    &__burger{
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 16px;
+        background-image: url(/img/hamburger.png);
+        @include bg_reset()
+        background-size:cover;
+        &--active{
+            background-position: bottom;
+        }
+    }
+    @include rwd(){
+        height: 50px;
+        &__burger{
+            width: 30px;
+            height: 30px;
+        }
+        img{
+            width: 90px;
+        }
+    }
+}
+.burger{
+    width: $w;
+    height: 100vh;
+    position: fixed;
+    background-color: $blue;
+    left: 50%;
+    z-index: 3;
+    @include df_center();
+    flex-direction: column;
+    transform: translateX(-50%) translateY(-100vh);
+    transition: all 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+    &--active{
+        transform: translateX(-50%) translateY(0);
+    }
+    &__list{
+        display: block;
+        width: $w*0.78;
+        height: $w*0.12;
+        margin-top: -10px;
+        @include bg_reset();
+        background-size: auto 100%;
+        transform: scale(0.8);
+        &:hover{
+            background-position: -390px 0;
+        }
+    }
+    li:nth-child(1) .burger__list{
+        background-image: url(/img/nav/nav_01.png);
+    }
+    li:nth-child(2) .burger__list{
+        background-image: url(/img/nav/nav_02.png);
+    }
+    li:nth-child(3) .burger__list{
+        background-image: url(/img/nav/nav_03.png);
+    }
+    li:nth-child(4) .burger__list{
+        background-image: url(/img/nav/nav_04.png);
+    }
+    li:nth-child(5) .burger__list{
+        background-image: url(/img/nav/nav_05.png);
+    }
+    li:nth-child(6) .burger__list{
+        background-image: url(/img/nav/nav_06.png);
+    }
+    li:nth-child(7) .burger__list{
+        background-image: url(/img/nav/nav_07.png);
+    }
+    li:nth-child(8) .burger__list{
+        background-image: url(/img/nav/nav_08.png);
+    }
+}
+// ======== KV開始 ======== 
+.kv{
+    width: 100%;
+    height: 860px;
+    display: flex;
+    flex-direction: row;
+    &__title{
+        position: absolute;
+        width: 100%;
+        z-index:2;
+        top:95px;
+        left: 50%;
+        transform: translateX(-50%);
+        @include df_center();
+        flex-direction: column;
+        span{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            position: relative;
+            margin-bottom: 10px;
+            &>img{
+                z-index: 2;
+            }
+            &:nth-child(4){
+                width: 95%;
+                margin-top: 10px;
+                @include rwd(){
+                    width: 104%;
+                }
+            }
+        }
+        &--light{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: $w/4;
+            height: $w/4;
+            transform: translate(-50%,-50%);
+            background-image: url(/img/topic_4_4.png);
+            @include df_center();
+            background-size: cover;
+            margin-top: 0px;
+            img{
+                width: 40%;
+            }
+            @include rwd(){
+                width: $w/3;
+                height: $w/3;
+            }
+        }
+
+    }
+    &__people{
+        width: 50%;
+        overflow: hidden;
+        position: relative;
+        @include df_center
+        img{
+            position: absolute;
+            bottom: -5px;
+        }
+    }
+    &__left{
+        background-image: url(/img/kv_city.jpg);
+        // &--woman1{
+        //     transform: translateX(200%);
+        // }
+        &--woman2{
+            transform: translateX(200%);
+        }
+    }
+    &__right{
+        background-image: url(/img/kv_beach.jpg);
+        // &--man1{
+        //     transform: translateX(200%);
+        // }
+        &--man2{
+            transform: translateX(200%);
+        }
+    }
+    @include rwd(){
+        height: 630px;
+        &__title{
+            top: 50px;
+            transform: translateX(-50%) scale(0.8);
+        }
+        &__people{
+            img{
+            width: 80%;
+            }
+        }
+    }
+}
+
+// ======== AR開始 ======== 
+.ar{
+    background-color: $yellow;
+    width: 100%;
+    height: 660px;
+    background-image: url(/img/section_1_topic_bg.png);
+    position: relative;
+    @include bg_reset(center center)
+    background-size: 95%;
+    &:after{
+        content:'';
+        display: block;
+        height: 50px;
+        width: 100%;
+        background-color: $yellow;
+        position: absolute;
+        bottom: -30px;
+        transform: rotate(-2deg)
+    }
+}
+// ======== game開始 ======== 
+.game{
+    width: 100%;
+    height: 400px;
+    background-color: #fff;
+    background-image: url(/img/section_1_game_bg.png);
+    @include bg_reset(center 80px);
+    background-size: 96%;
+    position: relative;
+    i{
+        display: block;
+        position: absolute;
+        width: $w/3;
+        height: $w/3;
+        background-image: url(/img/ar.gif);
+        background-size: cover;
+        right: 2%;
+        bottom: 10%;
+    }
+}
+// ======== video開始 ======== 
+.video{
+    width: 100%;
+    iframe{
+        width: 100%;
+        height: 300px;
+        border-top: 6px solid $yellow;
+        border-bottom: 6px solid $yellow;
+    }
+}
+// 登錄發票活動
+.sign{
+    width: 100%;
+    height: $w*2.2;
+    background-image: url(/img/section_3_bg_01.jpg);
+    background-size: cover;
+    @include bg_reset();
+}
+// ======== 表格開始 ======== 
+.form{
+    width: 100%;
+    height: $w*1.1;
+    background-image: url(/img/section_3_bg_02.jpg);
+    background-size: 100%;
+    position: relative;
+    @include bg_reset();
+    input{
+        display: block;
+        &[type="text"]{
+            width: 64%;
+            height: 38px;
+            position: relative;
+            left: 137px;
+            top: 4px;
+            margin-bottom: 8px;
+            border: 0 none  rgba(0, 0, 0, 0) !important;
+        }
+        &[type="checkbox"]{
+            opacity: 0;
+            position: absolute;
+            z-index:1;
+            width: 24px;
+            height: 24px;
+            &:checked +label:after,&:checked +label:before{
+                opacity: 1;
+            }
+        }
+        &[type="submit"]{
+            position: absolute;
+            left: 50%;
+            bottom: 5%;
+            transform: translateX(-50%);
+            width: 374px;
+            height: 82px;
+            border: 0px none;
+            background-image: url(/img/section_3_btn.png);
+            &:hover{
+                background-position: bottom;
+            }
+        }
+    }
+    label{
+        position: absolute;
+        bottom: 33%;
+        left: 20%;
+        display: block;
+        width: 24px;
+        height: 24px;
+        background-color: #fff;
+        border: 2px solid $darkblue;
+        &:after,&:before{
+            content:'';
+            display: block;
+            position: absolute;
+            background-color: $blue;
+            opacity: 0;
+            transition: all 0.2s;
+        }
+        &:after{
+            top: 10px;
+            left: -2px;
+            width: 15px;
+            height: 5px;
+            transform: rotate(45deg);
+        }
+        &:before{
+            top: 5px;
+            left: 5px;
+            width: 25px;
+            height: 5px;
+            transform: rotate(-45deg);
+        }
+    }
+}
+// ======== inBeach開始 ======== 
+.beach{
+    width: 100%;
+    padding: 60px 20px;
+    background-color: $blue;
+    &__block{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    &__box{
+        width: 48%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 10px 0;
+        &--top{
+            width: 100%;
+        }
+    }
+}
+// ======== AQUQ開始 ======== 
+.aqua{
+    width: 100%;
+    height: $w*3.2;
+    background-image: url(/img/section_6_bg.jpg);
+    @include bg_reset(center);
+    background-size: 100%;
+}
+// ======== 活動辦法開始 ======== 
+.rule{
+    width: 100%;
+    height: $w*0.9;
+    background-image: url(/img/section_rule_bg_0.png);
+    @include bg_reset();
+    background-size: 95%;
+}
+.rulelist{
+    width: 100%;
+    li{
+        margin-top: 30px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        &:nth-child(1) .rulelist__btn{
+            background-image: url(/img/rulebtn/section_rule_btn_01.png);
+        }
+        &:nth-child(2) .rulelist__btn{
+            background-image: url(/img/rulebtn/section_rule_btn_02.png);
+        }
+        &:nth-child(3) .rulelist__btn{
+            background-image: url(/img/rulebtn/section_rule_btn_03.png);
+        }
+        &:nth-child(4) .rulelist__btn{
+            background-image: url(/img/rulebtn/section_rule_btn_04.png);
+        }
+        &:nth-child(5) .rulelist__btn{
+            background-image: url(/img/rulebtn/section_rule_btn_05.png);
+        }
+        &:nth-child(6) .rulelist__btn{
+            background-image: url(/img/rulebtn/section_rule_btn_06.png);
+        }
+        img{
+            display: none;
+        }
+    }
+    &__btn{
+        width: 100%;
+        height: $w*0.15/2;
+        @include bg_reset(top center);
+        background-size: 85%;
+        &--active{
+            background-position: bottom center;
+        }
+    }
+    &__content{
+        width: 90%;
+        margin-top: 15px;
+    }
+}
+// footer開始
+footer{
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: $w/2*0.79/2;
+}
