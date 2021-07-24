@@ -57,12 +57,14 @@ table {
           box-sizing: border-box;
 }
 
-body, html {
+body,
+html {
   background-color: #d1efff;
   width: 100%;
 }
 
-img, iframe {
+img,
+iframe {
   max-width: 100%;
   height: auto;
 }
@@ -104,26 +106,23 @@ input:focus {
   position: relative;
   background-repeat: no-repeat;
   background-position: left top;
-}
-
-.popbtn [class^="popbtn"]:hover {
   background-position: bottom;
 }
 
 .popbtn [class^="popbtn"]:after {
-  content: '';
+  content: "";
   display: block;
   width: 256px;
   height: 126px;
-  background-image: url(/img/btn_light.png);
+  background-image: url("../img/btn_light.png");
 }
 
 .popbtn__1 {
-  background-image: url(/img/kv_btn_1.jpg);
+  background-image: url("../img/kv_btn_1.jpg");
 }
 
 .popbtn__2 {
-  background-image: url(/img/kv_btn_2.jpg);
+  background-image: url("../img/kv_btn_2.jpg");
 }
 
 @media (min-width: 500px) {
@@ -161,7 +160,7 @@ input:focus {
       -ms-transform: translateY(-50%);
           transform: translateY(-50%);
   right: 16px;
-  background-image: url(/img/hamburger.png);
+  background-image: url("../img/hamburger.png");
   background-repeat: no-repeat;
   background-position: left top;
   -webkit-background-size: cover;
@@ -242,35 +241,35 @@ input:focus {
 }
 
 .burger li:nth-child(1) .burger__list {
-  background-image: url(/img/nav/nav_01.png);
+  background-image: url("../img/nav/nav_01.png");
 }
 
 .burger li:nth-child(2) .burger__list {
-  background-image: url(/img/nav/nav_02.png);
+  background-image: url("../img/nav/nav_02.png");
 }
 
 .burger li:nth-child(3) .burger__list {
-  background-image: url(/img/nav/nav_03.png);
+  background-image: url("../img/nav/nav_03.png");
 }
 
 .burger li:nth-child(4) .burger__list {
-  background-image: url(/img/nav/nav_04.png);
+  background-image: url("../img/nav/nav_04.png");
 }
 
 .burger li:nth-child(5) .burger__list {
-  background-image: url(/img/nav/nav_05.png);
+  background-image: url("../img/nav/nav_05.png");
 }
 
 .burger li:nth-child(6) .burger__list {
-  background-image: url(/img/nav/nav_06.png);
+  background-image: url("../img/nav/nav_06.png");
 }
 
 .burger li:nth-child(7) .burger__list {
-  background-image: url(/img/nav/nav_07.png);
+  background-image: url("../img/nav/nav_07.png");
 }
 
 .burger li:nth-child(8) .burger__list {
-  background-image: url(/img/nav/nav_08.png);
+  background-image: url("../img/nav/nav_08.png");
 }
 
 .kv {
@@ -360,7 +359,7 @@ input:focus {
   -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  background-image: url(/img/topic_4_4.png);
+  background-image: url("../img/topic_4_4.png");
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -413,7 +412,7 @@ input:focus {
 }
 
 .kv__left {
-  background-image: url(/img/kv_city.jpg);
+  background-image: url("../img/kv_city.jpg");
 }
 
 .kv__left--woman2 {
@@ -423,7 +422,7 @@ input:focus {
 }
 
 .kv__right {
-  background-image: url(/img/kv_beach.jpg);
+  background-image: url("../img/kv_beach.jpg");
 }
 
 .kv__right--man2 {
@@ -451,7 +450,7 @@ input:focus {
   background-color: #fff333;
   width: 100%;
   height: 660px;
-  background-image: url(/img/section_1_topic_bg.png);
+  background-image: url("../img/section_1_topic_bg.png");
   position: relative;
   background-repeat: no-repeat;
   background-position: center center;
@@ -460,7 +459,7 @@ input:focus {
 }
 
 .ar:after {
-  content: '';
+  content: "";
   display: block;
   height: 50px;
   width: 100%;
@@ -476,7 +475,7 @@ input:focus {
   width: 100%;
   height: 400px;
   background-color: #fff;
-  background-image: url(/img/section_1_game_bg.png);
+  background-image: url("../img/section_1_game_bg.png");
   background-repeat: no-repeat;
   background-position: center 80px;
   -webkit-background-size: 96% 96%;
@@ -489,7 +488,7 @@ input:focus {
   position: absolute;
   width: 166.66667px;
   height: 166.66667px;
-  background-image: url(/img/ar.gif);
+  background-image: url("../img/ar.gif");
   -webkit-background-size: cover;
           background-size: cover;
   right: 2%;
@@ -510,7 +509,7 @@ input:focus {
 .sign {
   width: 100%;
   height: 1100px;
-  background-image: url(/img/section_3_bg_01.jpg);
+  background-image: url("../img/section_3_bg_01.jpg");
   -webkit-background-size: cover;
           background-size: cover;
   background-repeat: no-repeat;
@@ -520,7 +519,7 @@ input:focus {
 .form {
   width: 100%;
   height: 550px;
-  background-image: url(/img/section_3_bg_02.jpg);
+  background-image: url("../img/section_3_bg_02.jpg");
   -webkit-background-size: 100% 100%;
           background-size: 100%;
   position: relative;
@@ -550,7 +549,8 @@ input:focus {
   height: 24px;
 }
 
-.form input[type="checkbox"]:checked + label:after, .form input[type="checkbox"]:checked + label:before {
+.form input[type="checkbox"]:checked + label:after,
+.form input[type="checkbox"]:checked + label:before {
   opacity: 1;
 }
 
@@ -564,7 +564,7 @@ input:focus {
   width: 374px;
   height: 82px;
   border: 0px none;
-  background-image: url(/img/section_3_btn.png);
+  background-image: url("../img/section_3_btn.png");
 }
 
 .form input[type="submit"]:hover {
@@ -583,7 +583,7 @@ input:focus {
 }
 
 .form label:after, .form label:before {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   background-color: #5cc5f8;
@@ -662,7 +662,7 @@ input:focus {
 .aqua {
   width: 100%;
   height: 1600px;
-  background-image: url(/img/section_6_bg.jpg);
+  background-image: url("../img/section_6_bg.jpg");
   background-repeat: no-repeat;
   background-position: center;
   -webkit-background-size: 100% 100%;
@@ -672,7 +672,7 @@ input:focus {
 .rule {
   width: 100%;
   height: 450px;
-  background-image: url(/img/section_rule_bg_0.png);
+  background-image: url("../img/section_rule_bg_0.png");
   background-repeat: no-repeat;
   background-position: left top;
   -webkit-background-size: 95% 95%;
@@ -706,27 +706,27 @@ input:focus {
 }
 
 .rulelist li:nth-child(1) .rulelist__btn {
-  background-image: url(/img/rulebtn/section_rule_btn_01.png);
+  background-image: url("../img/rulebtn/section_rule_btn_01.png");
 }
 
 .rulelist li:nth-child(2) .rulelist__btn {
-  background-image: url(/img/rulebtn/section_rule_btn_02.png);
+  background-image: url("../img/rulebtn/section_rule_btn_02.png");
 }
 
 .rulelist li:nth-child(3) .rulelist__btn {
-  background-image: url(/img/rulebtn/section_rule_btn_03.png);
+  background-image: url("../img/rulebtn/section_rule_btn_03.png");
 }
 
 .rulelist li:nth-child(4) .rulelist__btn {
-  background-image: url(/img/rulebtn/section_rule_btn_04.png);
+  background-image: url("../img/rulebtn/section_rule_btn_04.png");
 }
 
 .rulelist li:nth-child(5) .rulelist__btn {
-  background-image: url(/img/rulebtn/section_rule_btn_05.png);
+  background-image: url("../img/rulebtn/section_rule_btn_05.png");
 }
 
 .rulelist li:nth-child(6) .rulelist__btn {
-  background-image: url(/img/rulebtn/section_rule_btn_06.png);
+  background-image: url("../img/rulebtn/section_rule_btn_06.png");
 }
 
 .rulelist li img {
