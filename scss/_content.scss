@@ -31,7 +31,7 @@ input:focus {
 }
 // ======== 基本設置結束 ========
 .wrapper {
-  width: 100%;
+  width: $w;
   max-width: $w;
   margin: 0 auto;
   position: relative;
